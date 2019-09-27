@@ -2,8 +2,12 @@
     session_start();
 
     if((isset($_POST['email'])) && (isset($_POST['password']))){
-        $user = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $user = $_POST['email'];
+        $password = $_POST['password'];
+
+      // var_dump($user);
+      // var_dump($password);
+      // die();
         
         if(($password == "123") && ($user == "teste@teste")){
             header("Location: ../model/administracaoIndex.php");    
