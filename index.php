@@ -49,5 +49,3 @@
     </body>
 </html>
 
-//id - nome - email - fone - senha - tipo
-//id - desc 
