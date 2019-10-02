@@ -11,6 +11,7 @@
         $row = mysqli_num_rows($result);
        
         if($row == 1){
+            $_SESSION['user'] =$user; 
             header("Location: ../model/administracaoIndex.php");    
         } else{
             $_SESSION['loginErro'] = "Usuário ou senha inválidos";

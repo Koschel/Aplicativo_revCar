@@ -27,7 +27,10 @@
             <a class="nav-item nav-link active" href="#">Monitorar</a>
             </div>
         </div>
+        <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
     </nav>
+    <div>
+    </div>
     <div>
     <table class="table">
   <thead class="thead-dark">
