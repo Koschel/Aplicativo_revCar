@@ -30,7 +30,7 @@
     </head>
     <body class="text-center">
         <form class="form-signin" method="POST" action="controller/check.php">
-            <img class="mb-4" src="img/logo.png" alt="" width="100" height="100">
+            <img class="mb-4" src="img/logo.png" alt="" width="100" height="135">
                 <h1 class="h3 mb-3 font-weight-normal">Entrar</h1>
                 <label for="inputText" class="sr-only">Usuário</label>
                 <input type="email" name="email" id="inputText" class="form-control" placeholder="Usuário">

@@ -1,11 +1,10 @@
 <?php
-  
     session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro</title>
+    <title>Cadastro Funcionario</title>
     <meta charser="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,6 +16,70 @@
     
 </head>
 <body>
-    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="viewAdm.php">Home</a>
+            <a class="nav-item nav-link active" href="#">Monitorar</a>
+        </div>
+    </div>
+</nav>
+<form style="margin: 3%;" class="text-center">
+<div>
+    <h3>Cadastro de Funcionario</h3>
+</div>
+    <div class="form-group row">
+        <label for="inputText3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputText3" placeholder="Nome">
+        </div>
+    </div>
+    <fieldset class="form-group">
+    <div class="row text-left">
+      <legend class="col-form-label col-sm-2 pt-0"><b>Classificação de Funcionario</b></legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Supervisor
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Motorista
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+    <div class="form-group row">
+        <label for="inputText3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputText3" placeholder="Data de Admição">
+        </div>
+    </div>   
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+        </div>
+    </div>  
+    <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-dark">Cadastrar</button>
+    </div>
+  </div>     
+</form>
 </body>
 </html>
