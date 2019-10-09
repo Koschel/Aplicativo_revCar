@@ -1,7 +1,4 @@
-<?php
-  
-    session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -18,40 +15,19 @@
     
     </head>
     <body>
-    <?php include("navbar.php")?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="viewCreate.php">Cadastrar</a>
+            <a class="nav-item nav-link active" href="viewMonitorar.php">Monitorar</a>
+            </div>
+        </div>
+    </nav>
     <div>
-    </div>
-    <div>
-    <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Motorista</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-warning">Ver</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-success">Ver</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td><button type="button" class="btn btn-danger">Ver</button></td>
-    </tr>
-  </tbody>
-</table>
     </div>
     </body>
 </html>
