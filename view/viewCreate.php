@@ -36,8 +36,8 @@
             
             <form  method="POST" action="../model/modelCreatePersona.php">
                 <div class="btn-group col" role="group" aria-label="Basic example">
-                    <button name = "persona" value = 1 type="submit" class="btn btn-info">Pessoa</button>
-                    <button name = "car" value = 2 type="submit" class="btn btn-info">Veiculo</button>
+                    <button name = "persona" value = 1 type="submit" class="btn btn-info" style="margin-right: 1px;">Pessoa</button>
+                    <button name = "car" value = 2 type="submit" class="btn btn-info" style="margin-left: 1px;">Veiculo</button>
                 </div>
             </form>
             
