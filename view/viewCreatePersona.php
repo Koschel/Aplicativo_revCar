@@ -1,5 +1,10 @@
 <?php
     session_start();
+    include("../controller/conexao.php");
+    $sql = "select * from carro";
+    $result = mysqli_query($conn,$sql);;
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +21,20 @@
     
 </head>
 <body>
+<script type="text/javascript">
+        function optionCheck(){
+          var option = document.getElementById("options").value;
+          if(option == "show"){
+              document.getElementById("hiddenDiv").style.visibility ="visible";
+          }
+          if(option == "hidden"){
+              document.getElementById("hiddenDiv").style.visibility ="hidden";
+          }
+      }
+      </script>
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,58 +47,58 @@
         </div>
     </div>
 </nav>
-<form style="margin: 3%;" class="text-center">
+<form action="../controller/register.php" method = "POST" style="margin: 3%;" class="text-center">
 <div>
     <h3>Cadastro de Funcionario</h3>
 </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputText3" placeholder="Nome">
+            <input name = "name" type="text" class="form-control" id="inputText3" placeholder="Nome">
         </div>
     </div>
     <fieldset class="form-group">
     <div class="row text-left">
       <legend class="col-form-label col-sm-2 pt-0"><b>Classificação de Funcionario</b></legend>
       <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Supervisor
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Motorista
-          </label>
-        </div>
+      <select id="options" onchange="optionCheck()" class="custom-select">
+        <option value="hidden">Funcionario</option>
+        <option value="show">Motorista</option>
+      </select >
+      <div id="hiddenDiv" style="margin-top:20px;border:1px;visibility:hidden;">
+      <select class="custom-select custom-select-sm">
+        <option selected>Selecione carro disponivel</option>
+        <?php while($dado = $result -> fetch_array()){?>
+        <option value="<?php $dado['id'] ?>"><?php echo $dado['modelo'] ?></option>
+        <?php }?>
+      </select>
+      </div>
       </div>
     </div>
   </fieldset>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputText3" placeholder="Data de Admição">
+            <input name = "dt_adm" type="date" class="form-control" id="inputText3" placeholder="Data de Admição">
         </div>
     </div>   
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <input name = "email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+            <input name = "password" type="password" class="form-control" id="inputPassword3" placeholder="Senha">
         </div>
     </div>  
     <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-dark">Cadastrar</button>
     </div>
-  </div>     
+  </div>  
 </form>
 </body>
 </html>

@@ -29,32 +29,32 @@
         </div>
 </nav>
 
-<form style="margin: 3%;" class="text-center">
+<form style="margin: 3%;" class="text-center" action="../controller/registerCar.php" method = "POST">
 <div >
     <h3>Cadastro de Veiculo</h3>
 </div>
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Placa">
+            <input name="placa" type="text" class="form-control" id="inputText3" placeholder="Placa">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputText3" placeholder="Marca">
+            <input name="marca" type="text" class="form-control" id="inputText3" placeholder="Marca">
         </div>
     </div>   
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputText3" placeholder="Modelo">
+            <input name="modelo" type="text" class="form-control" id="inputText3" placeholder="Modelo">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputText3" placeholder="Ano do Veiculo">
+            <input name="dt_car" type="text" class="form-control" id="inputText3" placeholder="Ano do Veiculo">
         </div>
     </div>
     <div class="form-group row">
