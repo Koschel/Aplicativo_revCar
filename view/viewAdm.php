@@ -1,8 +1,8 @@
 <?php
     session_start();
     include("../controller/conexao.php");
-    $sql = "select f.id as id_func, c.placa as placa, f.nome  from funcionario f inner join carro c on f.id_car = c.id";
-    $result = mysqli_query($conn,$sql);;
+    $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id;";
+    $result = mysqli_query($conn, $sql);;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
