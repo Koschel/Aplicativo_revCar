@@ -1,6 +1,8 @@
 <?php
-  
     session_start();
+    include("../controller/conexao.php");
+    $sql = "select f.id as id_func, c.placa as placa, f.nome  from funcionario f inner join carro c on f.id_car = c.id";
+    $result = mysqli_query($conn,$sql);;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,24 +34,14 @@
     </tr>
   </thead>
   <tbody>
+    <?php while($dado = $result -> fetch_array()){?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row"><?php echo $dado['id_func']?></th>
+      <td><?php echo $dado['placa']?></td>
+      <td><?php echo $dado['nome']?></td>
       <td><button type="button" class="btn btn-warning">Ver</button></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-success">Ver</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td><button type="button" class="btn btn-danger">Ver</button></td>
-    </tr>
+    <?php }?>
   </tbody>
 </table>
     </div>

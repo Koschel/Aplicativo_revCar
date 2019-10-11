@@ -24,10 +24,10 @@
 <script type="text/javascript">
         function optionCheck(){
           var option = document.getElementById("options").value;
-          if(option == "show"){
+          if(option == "2"){
               document.getElementById("hiddenDiv").style.visibility ="visible";
           }
-          if(option == "hidden"){
+          if(option == "1"){
               document.getElementById("hiddenDiv").style.visibility ="hidden";
           }
       }
@@ -61,15 +61,15 @@
     <div class="row text-left">
       <legend class="col-form-label col-sm-2 pt-0"><b>Classificação de Funcionario</b></legend>
       <div class="col-sm-10">
-      <select id="options" onchange="optionCheck()" class="custom-select">
-        <option value="hidden">Funcionario</option>
-        <option value="show">Motorista</option>
+      <select name="tipo" id="options" onchange="optionCheck()" class="custom-select">
+        <option value="1">Funcionario</option>
+        <option value="2">Motorista</option>
       </select >
       <div id="hiddenDiv" style="margin-top:20px;border:1px;visibility:hidden;">
-      <select class="custom-select custom-select-sm">
+      <select name="car"  class="custom-select custom-select-sm">
         <option selected>Selecione carro disponivel</option>
         <?php while($dado = $result -> fetch_array()){?>
-        <option value="<?php $dado['id'] ?>"><?php echo $dado['modelo'] ?></option>
+        <option value="<?php echo $dado['id'] ?>"><?php echo $dado['modelo'] ?></option>
         <?php }?>
       </select>
       </div>
