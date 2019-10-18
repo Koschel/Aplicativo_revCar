@@ -44,6 +44,10 @@
                     unset ($_SESSION['loginErro']);
                 }
             ?>
+
+            Anotação: arrumar o banco -> km precisa de data -> carro precisa de data da ultima revisão 
+            
+            
             </p>
         </form>
     </body>
