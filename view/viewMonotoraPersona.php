@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../controller/controleAcesso.php");
 include('../controller/conexao.php');
 
 $sql = "SELECT f.*, c.placa FROM funcionario f LEFT join carro c on f.id_car = c.id ";

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("controleAcesso.php");
 include("conexao.php");
 
 $placa =  mysqli_real_escape_string($conn, trim($_POST['placa']));

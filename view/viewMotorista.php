@@ -1,8 +1,10 @@
-<?php
+<?php 
 session_start();
 include("../controller/controleAcesso.php");
+include('../controller/conexao.php');
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -26,12 +28,27 @@ include("../controller/controleAcesso.php");
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="viewCreate.php">Cadastrar</a>
-            <a class="nav-item nav-link active" href="viewMonitorar.php">Monitorar</a>
+            <a class="nav-item nav-link active" href="#">Status Veiculo</a>
+            <a class="nav-item nav-link active" href="#">Sair</a>
             </div>
         </div>
     </nav>
     <div>
+    <form style="margin: 3%;" class="text-center" action="../controller/registerKm.php" method = "POST">
+    '<div >
+        <h3>Cadastro de KM Percorridos</h3>
+    </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input name="km" type="text" class="form-control" id="inputText3" placeholder="KM">
+            </div>
+        </div>
+        <div class="form-group row">
+        <div class="col-sm-10">
+        <button type="submit" class="btn btn-dark">Cadastrar</button>
+        </div>       
+    </form>
     </div>
     </body>
 </html>

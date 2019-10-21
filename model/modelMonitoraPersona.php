@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../controller/controleAcesso.php");
 include('../controller/conexao.php');
 
 $id_func = $_POST["id_func"];
