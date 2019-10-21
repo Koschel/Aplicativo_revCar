@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include("../controller/controleAcesso.php");
     include("../controller/conexao.php");
     $sql = "SELECT * FROM carro c where not EXISTS (SELECT f.id_car from funcionario f WHERE f.id_car = c.id)";

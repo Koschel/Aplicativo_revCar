@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("controleAcesso.php");
     include('../controller/conexao.php');
 
     if((isset($_POST['email'])) && (isset($_POST['password']))){

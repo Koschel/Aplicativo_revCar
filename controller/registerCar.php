@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("controleAcesso.php");
 include("conexao.php");
 

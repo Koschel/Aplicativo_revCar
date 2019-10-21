@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include("../controller/controleAcesso.php");
 ?>
 <!DOCTYPE html>
