@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
 </head>
-<body  class="load">
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,13 +27,24 @@
             <a class="nav-item nav-link active" href="viewCreate.php">Cadastrar</a>
             </div>
         </div>
-        
     </nav>
-    <h3>EM_OBRAS_(ERRO#42)<h3>
 
-    <img src="../img/tela_de_lod.gif" class="img-fluid" alt="Responsive image">
-   
+    </nav><!--style="margin-top: 0%;"-->
+    <div class="container text-center">
+        <div>
+            <img class="mb-4" src="../img/logo.png" alt="" width="100" height="135">
+            <h3>MONITORAR<h3>
             
+            <form  method="POST" action="../model/modelMonitora.php">
+                <div class="btn-group col" role="group" aria-label="Basic example">
+                    <button name = "persona" value = 1 type="submit" class="btn btn-info" style="margin-right: 1px;">Pessoa</button>
+                    <button name = "car" value = 2 type="submit" class="btn btn-info" style="margin-left: 1px;">Veiculo</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    
             
 
 </body>

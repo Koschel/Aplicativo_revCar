@@ -6,5 +6,4 @@ define('DB', 'revcar');
 
 $conn = mysqli_connect(HOST,USER,PASSWORD,DB) or die ('Erro na conexão com o banco');
 
-
 ?>

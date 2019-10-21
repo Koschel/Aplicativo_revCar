@@ -2,7 +2,7 @@
     session_start();
     include("../controller/conexao.php");
     $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id;";
-    $result = mysqli_query($conn, $sql);;
+    $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,25 +25,25 @@
     </div>
     <div>
     <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Motorista</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php while($dado = $result -> fetch_array()){?>
-    <tr>
-      <th scope="row"><?php echo $dado['id_func']?></th>
-      <td><?php echo $dado['placa']?></td>
-      <td><?php echo $dado['nome']?></td>
-      <td><button type="button" class="btn btn-warning">Ver</button></td>
-    </tr>
-    <?php }?>
-  </tbody>
-</table>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Placa</th>
+          <th scope="col">Motorista</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php while($dado = $result -> fetch_array()){?>
+        <tr>
+          <th scope="row"><?php echo $dado['id_func']?></th>
+          <td><?php echo $dado['placa']?></td>
+          <td><?php echo $dado['nome']?></td>
+          <td><button type="button" class="btn btn-warning">Ver</button></td>
+        </tr>
+        <?php }?>
+      </tbody>
+    </table>
     </div>
     </body>
 </html>

@@ -4,9 +4,10 @@
 
     if((isset($_POST['email'])) && (isset($_POST['password']))){
         $user = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $password = mysqli_real_escape_string ($conn, $_POST['password']);
 
-        $query = "select id, email from funcionario where email = '{$user}' and senha = '{$password}'";
+        $query = "select id, email from funcionario where email = '{$user}' and senha = sha1('{$password}') and func_ativo = 1;";
+      
         $result = mysqli_query($conn, $query);
         $row = mysqli_num_rows($result);
        

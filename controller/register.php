@@ -5,7 +5,7 @@ include("conexao.php");
 $nome =  mysqli_real_escape_string($conn, trim($_POST['name']));
 $dt_adm =  mysqli_real_escape_string($conn, trim($_POST['dt_adm']));
 $email =  mysqli_real_escape_string($conn, trim($_POST['email']));
-$password =  mysqli_real_escape_string($conn, trim($_POST['password']));
+$password =  mysqli_real_escape_string($conn, trim(sha1($_POST['password'])));
 $car = mysqli_real_escape_string($conn, trim($_POST['car']));
 $tipo = mysqli_real_escape_string($conn, trim($_POST['tipo']));
 
