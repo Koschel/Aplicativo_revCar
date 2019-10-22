@@ -1,7 +1,7 @@
 <?php
     include("../controller/controleAcesso.php");
     include("../controller/conexao.php");
-    $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id;";
+    $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id and f.func_ativo = 1;";
     $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>

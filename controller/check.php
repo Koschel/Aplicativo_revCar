@@ -6,18 +6,19 @@
         $user = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string ($conn, $_POST['password']);
 
-        $query = "select id, email, tipo from funcionario where email = '{$user}' and senha = sha1('{$password}') and func_ativo = 1;";
+        $query = "select id, email, tipo, id_car from funcionario where email = '{$user}' and senha = sha1('{$password}') and func_ativo = 1;";
       
         $result = mysqli_query($conn, $query);
         $row = mysqli_num_rows($result);
         $dado = $result -> fetch_array();
        
         if($row == 1){
-            $_SESSION['user'] =$user; 
+            $_SESSION['user'] =$user;  
             if($dado['tipo'] == 1){
             header("Location: ../model/administracaoIndex.php");    
             }
             if($dado['tipo'] == 2){
+                $_SESSION['id_car'] =$dado['id_car'];
             header("Location: ../model/modelMotorista.php");    
             }
         } else{
