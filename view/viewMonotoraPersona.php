@@ -2,7 +2,7 @@
 include("../controller/controleAcesso.php");
 include('../controller/conexao.php');
 
-$sql = "SELECT f.*, c.placa FROM funcionario f LEFT join carro c on f.id_car = c.id ";
+$sql = "SELECT f.id, f.nome, f.email, CASE f.func_ativo WHEN 1 THEN 'ON' WHEN 0 THEN 'OFF' END as status, c.placa FROM funcionario f LEFT join carro c on f.id_car = c.id";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $sql);
         <tbody>
           <?php while($dado = $result -> fetch_array()){?>
           <tr>
-            <th scope="row"><?php echo $dado['id']?></th>
+            <th scope="row"><?php echo $dado['status']?></th>
             <td><?php echo $dado['nome']?></td>
             <td><?php echo $dado['email']?></td>
             <td><form method="POST" action="../model/modelMonitoraPersona.php"><button value="<?php echo $dado['id'] ?>" name = "id_func" type="submit" class="btn btn-success">Acessar</button></form></td>

@@ -4,9 +4,13 @@ include('../controller/conexao.php');
 
 $id_func = $_POST["id_func"];
 
-$sql = "select * from funcionario f where f.id = '$id_func'";
+$sql = "select f.*, c.placa, c.modelo from funcionario f left join carro c on f.id_car = c.id where f.id = '$id_func'";
+$sqlC = "SELECT * FROM carro c where not EXISTS (SELECT f.id_car from funcionario f WHERE f.id_car = c.id)";
+$resultC = mysqli_query($conn, $sqlC); 
 $result = mysqli_query($conn, $sql);
-$dado = $result -> fetch_array()
+
+$dado = $result -> fetch_array();
+//var_dump($dado['tipo']); die();
 ?>
 
 <!DOCTYPE html>
@@ -27,14 +31,15 @@ $dado = $result -> fetch_array()
 <body>
 <script type="text/javascript">
         function optionCheck(){
-          var option = document.getElementById("<?php $dado['tipo']?>");
-          if(option == 2){
+          int option = <?php echo $dado['tipo']?>;
+          if(option == "2"){
               document.getElementById("hiddenDiv").style.visibility ="visible";
           }
-          if(option == 1){
+          if(option == "1"){
               document.getElementById("hiddenDiv").style.visibility ="hidden";
           }
       }
+      //id="hiddenDiv" visibility:hidden;
       </script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -50,7 +55,7 @@ $dado = $result -> fetch_array()
         </div>
 </nav>
 
-<form style="margin: 3%;" class="text-center" action="../controller/registerCar.php" method = "POST">
+<form style="margin: 3%;" class="text-center" action="../controller/updatePersona.php" method = "POST">
 <div >
     <h3>EDITAR FUNCIONÁRIO</h3>
 </div>
@@ -72,18 +77,21 @@ $dado = $result -> fetch_array()
             <input name="dt_adm" type="text" class="form-control" id="inputDate3" placeholder="<?php echo $dado['data_Admi'] ?>">
         </div>
     </div>
-    <div id="hiddenDiv" style="margin-top:20px;border:1px;visibility:hidden;">
+    <div class="col-sm-10">
+    <div class= "form-group row"   style="margin-top:20px;border:1px;">
+    <label for="inputText3" class="col-sm-2 col-form-label">Veiculo: <?php echo $dado['placa']?> - <?php echo $dado['modelo']?></label>
       <select name="car"  class="custom-select custom-select-sm">
         <option selected>Selecione carro disponivel</option>
-        <?php while($dado1 = $result -> fetch_array()){?>
-        <option value="<?php echo $dado1['id_carro'] ?>"><?php echo $dado1['id_carro'] ?> - <?php echo $dado1['placa'] ?></option>
+        <?php while($dado1 = $resultC -> fetch_array()){?>
+        <option value="<?php echo $dado1['id'] ?>"><?php echo $dado1['id'] ?> - <?php echo $dado1['placa'] ?></option>
         <?php }?>
       </select>
       </div>
+      </div>
     <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-info">Salvar</button>
-      <button type="submit" class="btn btn-danger">Inativar</button>
+      <button type="submit"name="salvar" class="btn btn-info">Salvar</button>
+      <button type="submit" value ="<?php echo $dado["id"]?>" name="inativar" class="btn btn-danger">Inativar</button>
     </div>       
 </form>
 

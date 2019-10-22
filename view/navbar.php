@@ -23,6 +23,7 @@
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="viewCreate.php">Cadastrar</a>
             <a class="nav-item nav-link active" href="viewMonitorar.php">Monitorar</a>
+            <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
             </div>
         </div>
     </nav>

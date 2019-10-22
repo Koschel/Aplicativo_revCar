@@ -24,7 +24,7 @@
 <body>
 <script type="text/javascript">
         function optionCheck(){
-          var option = document.getElementById("options").value;
+            var option = document.getElementById("options").value;
           if(option == "2"){
               document.getElementById("hiddenDiv").style.visibility ="visible";
           }

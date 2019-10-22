@@ -28,7 +28,7 @@ include('../controller/conexao.php');
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Status Veiculo</a>
-            <a class="nav-item nav-link active" href="#">Sair</a>
+            <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
             </div>
         </div>
     </nav>
