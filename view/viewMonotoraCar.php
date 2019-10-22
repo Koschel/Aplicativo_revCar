@@ -2,8 +2,8 @@
 include("../controller/controleAcesso.php");
 include('../controller/conexao.php');
 
-$sql = "SELECT f.*, c.placa FROM funcionario f LEFT join carro c on f.id_car = c.id ";
-
+$sql = "select * from carro";
+$result = mysqli_query($conn, $sql);
 
 ?>
 
@@ -11,7 +11,7 @@ $sql = "SELECT f.*, c.placa FROM funcionario f LEFT join carro c on f.id_car = c
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro</title>
+    <title>Monitorar</title>
     <meta charser="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,7 +24,28 @@ $sql = "SELECT f.*, c.placa FROM funcionario f LEFT join carro c on f.id_car = c
 </head>
 <body>
 <?php include("navbar.php")?>
- 
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Revisão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php while($dado = $result -> fetch_array()){?>
+          <tr>
+            <th scope="row"><?php echo $dado['id']?></th>
+            <td><?php echo $dado['placa']?></td>
+            <td><?php echo $dado['dt_ultima_revisao']?></td>
+            <td><form method="POST" action="../model/modelMonitoraCar.php"><button value="<?php echo $dado['id']?>" name = "id_carro" type="submit" class="btn btn-success">Acessar</button></form></td>
+          </tr>
+          <?php }?>
+        </tbody>
+      </table>
+
+    </div>
             
 
 </body>
