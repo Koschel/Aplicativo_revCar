@@ -28,10 +28,14 @@ $dado = $result -> fetch_array();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     
 </head>
-<body>
+<body onload="optionCheck()">
 <script type="text/javascript">
+
+    
+
         function optionCheck(){
-          int option = <?php echo $dado['tipo']?>;
+         
+          var option = document.getElementById("tipo").value;
           if(option == "2"){
               document.getElementById("hiddenDiv").style.visibility ="visible";
           }
@@ -55,30 +59,30 @@ $dado = $result -> fetch_array();
         </div>
 </nav>
 
-<form style="margin: 3%;" class="text-center" action="../controller/updatePersona.php" method = "POST">
+<form style="margin: 3%;" class="text-center" action="../controller/updatePersona.php" method = "POST" id="meuform" >
 <div >
     <h3>EDITAR FUNCIONÁRIO</h3>
 </div>
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Nome</label>
         <div class="col-sm-10">
-            <input name="nome" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['nome'] ?>">
+            <input name="nome" type="text" class="form-control" id="inputText3" placeholder = "<?php echo $dado['nome'] ?>" value="<?php echo $dado['nome'] ?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">E-mail</label>
         <div class="col-sm-10">
-            <input name="email" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['email'] ?>">
+            <input name="email" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['email'] ?>" value="<?php echo $dado['email'] ?>">
         </div>
     </div>   
     <div class= "form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">Data de Adimissão</label>
         <div class="col-sm-10">
-            <input name="dt_adm" type="text" class="form-control" id="inputDate3" placeholder="<?php echo $dado['data_Admi'] ?>">
+            <input name="dt_adm" type="text" class="form-control" id="inputDate3" placeholder="<?php echo $dado['data_Admi'] ?>" value="<?php echo $dado['data_Admi'] ?>">
         </div>
     </div>
     <div class="col-sm-10">
-    <div class= "form-group row"   style="margin-top:20px;border:1px;">
+    <div class= "form-group row" id="hiddenDiv" style="margin-top:20px;border:1px;">
     <label for="inputText3" class="col-sm-2 col-form-label">Veiculo: <?php echo $dado['placa']?> - <?php echo $dado['modelo']?></label>
       <select name="car"  class="custom-select custom-select-sm">
         <option selected>Selecione carro disponivel</option>
@@ -93,6 +97,9 @@ $dado = $result -> fetch_array();
       <button type="submit"name="salvar" class="btn btn-info">Salvar</button>
       <button type="submit" value ="<?php echo $dado["id"]?>" name="inativar" class="btn btn-danger">Inativar</button>
     </div>       
+    <div>
+        <input type="hidden" id="tipo" name="tipo" value="<?=$dado['tipo']?>"/>
+    </div>
 </form>
 
 </body>
