@@ -19,11 +19,13 @@
             <span class="navbar-toggler-icon"></span>
             <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
         </button>
+        <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="viewCreate.php">Cadastrar</a>
-            <a class="nav-item nav-link active" href="viewMonitorar.php">Monitorar</a>
-            <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
+            <a class="nav-item nav-link active" href="../view/viewCreate.php">Cadastrar</a>
+            <a class="nav-item nav-link active" href="../view/viewMonitorar.php">Monitorar</a>
             </div>
         </div>
     </nav>

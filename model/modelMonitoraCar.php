@@ -23,18 +23,7 @@
     
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="../view/viewAdm.php">Home</a>
-            <a class="nav-item nav-link active" href="../view/viewMonitorar.php">Monitorar</a>
-            </div>
-        </div>
-</nav>
+<?php include("../view/navbar.php")?>
 
 <form style="margin: 3%;" class="text-center" action="../controller/updateCar.php" method = "POST">
 <div >
@@ -43,31 +32,31 @@
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Placa</label>
         <div class="col-sm-10">
-            <input name="placa" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['placa']?>" onkeypress="$(this).mask('AAA-0000');">
+            <input name="placa" type="text" class="form-control" id="inputText3" value="<?php echo $dado['placa']?>" placeholder="<?php echo $dado['placa']?>" onkeypress="$(this).mask('AAA-0000');">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">Marca</label>
         <div class="col-sm-10">
-            <input name="marca" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['marca']?>">
+            <input name="marca" type="text" class="form-control" id="inputText3" value="<?php echo $dado['marca']?>" placeholder="<?php echo $dado['marca']?>">
         </div>
     </div>   
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">Modelo</label>
         <div class="col-sm-10">
-            <input name="modelo" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['modelo']?>">
+            <input name="modelo" type="text" class="form-control" id="inputText3" value="<?php echo $dado['modelo']?>" placeholder="<?php echo $dado['modelo']?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">Ano do Veiculo</label>
         <div class="col-sm-10">
-            <input name="dt_car" type="text" class="form-control" id="inputText3" placeholder="<?php echo $dado['ano']?>">
+            <input name="dt_car" type="text" class="form-control" id="inputText3" value="<?php echo $dado['ano']?>" placeholder="<?php echo $dado['ano']?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label">Data Ultima Revisao (Ano-Mes-Dia)</label>
         <div class="col-sm-10">
-            <input name="dt_revis" type="text" class="form-control" id="inputDate3" placeholder="<?php echo $dado['dt_ultima_revisao']?>" onkeypress="$(this).mask('0000-00-00');">
+            <input name="dt_revis" type="text" class="form-control" id="inputDate3" value="<?php echo $dado['dt_ultima_revisao']?>" placeholder="<?php echo $dado['dt_ultima_revisao']?>" onkeypress="$(this).mask('0000-00-00');">
         </div>
     </div>
     <div class="form-group row">

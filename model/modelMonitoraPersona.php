@@ -30,9 +30,6 @@ $dado = $result -> fetch_array();
 </head>
 <body onload="optionCheck()">
 <script type="text/javascript">
-
-    
-
         function optionCheck(){
          
           var option = document.getElementById("tipo").value;
@@ -46,18 +43,7 @@ $dado = $result -> fetch_array();
       //id="hiddenDiv" visibility:hidden;
       </script>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="../view/viewAdm.php">Home</a>
-            <a class="nav-item nav-link active" href="../view/viewMonitorar.php">Monitorar</a>
-            </div>
-        </div>
-</nav>
+<?php include("../view/navbar.php")?>
 
 <form style="margin: 3%;" class="text-center" action="../controller/updatePersona.php" method = "POST" id="meuform" >
 <div >
