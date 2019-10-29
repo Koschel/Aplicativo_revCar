@@ -15,24 +15,15 @@
     
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
-        </button>
-        <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
+    <?php include("navbar.php")?>
+    <div class="container-fluid">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Título do card</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
+                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
         </div>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="../view/viewAdm.php">Home</a>
-            <a class="nav-item nav-link active" href="../view/viewCreate.php">Cadastrar</a>
-            <a class="nav-item nav-link active" href="../view/viewMonitorar.php">Monitorar</a>
-            </div>
-        </div>
-    </nav>
-    <div>
     </div>
+</div>
     </body>
 </html>
-
