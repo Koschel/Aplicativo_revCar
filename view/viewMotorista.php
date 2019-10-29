@@ -44,7 +44,7 @@ include('../controller/conexao.php');
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
-                <input name="km" type="text" class="form-control" id="inputText3" placeholder="KM" onkeypress="$(this).mask('000000');">
+                <input name="km" type="text" required="required" class="form-control" id="inputText3" placeholder="KM" onkeypress="$(this).mask('000000');">
             </div>
         </div>
         <div class="form-group row">

@@ -24,6 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="../view/viewAdm.php">Home</a>
             <a class="nav-item nav-link active" href="../view/viewCreate.php">Cadastrar</a>
             <a class="nav-item nav-link active" href="../view/viewMonitorar.php">Monitorar</a>
             </div>

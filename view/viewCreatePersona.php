@@ -44,7 +44,7 @@
     <div class="form-group row">
         <label for="inputText3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input name = "name" type="text" class="form-control" id="inputText3" placeholder="Nome">
+            <input name = "name" required="required" type="text" class="form-control" id="inputText3" placeholder="Nome">
         </div>
     </div>
     <fieldset class="form-group">

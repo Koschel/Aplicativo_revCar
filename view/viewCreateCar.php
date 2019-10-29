@@ -26,7 +26,7 @@
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <input name="placa" type="text" class="form-control" id="inputText3" placeholder="Placa" onkeypress="$(this).mask('AAA-0A00');">
+            <input name="placa" required="required" type="text" class="form-control" id="inputText3" placeholder="Placa" onkeypress="$(this).mask('AAA-0A00');">
         </div>
     </div>
     <div class="form-group row">

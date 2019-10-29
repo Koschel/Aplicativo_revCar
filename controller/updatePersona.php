@@ -24,11 +24,21 @@ switch (get_post_action('inativar', 'salvar')) {
         break;
 
     case 'salvar':
-            echo "teste 2";
+            $id_func =  mysqli_real_escape_string($conn, trim($_POST['salvar']));
+            $nome =  mysqli_real_escape_string($conn, trim($_POST['nome']));
+            $email =  mysqli_real_escape_string($conn, trim($_POST['email']));
+            $dt_adm =  mysqli_real_escape_string($conn, trim($_POST['dt_adm']));
+            $car =  mysqli_real_escape_string($conn, trim($_POST['car']));
+            
+           
+            $sql = "update funcionario set nome = '$nome', email = '$email', data_Admi = '$dt_adm' where id = '$id_func';";
+            $result = mysqli_query($conn,$sql);
+            header('Location: ../view/viewMonotoraPersona.php');
+            
         break;
 
     default:
-        //no action sent
+        echo "erro";
 }
 
 ?>
