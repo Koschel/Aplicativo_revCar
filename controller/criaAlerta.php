@@ -3,7 +3,8 @@ $sqlUm = "select  (q.km - c.km_utima_revisao) < 10000 as km_limkite from quilome
 $resultUm = mysqli_query($conn, $sqlUm);
 $dadoUm = $resultUm -> fetch_array();
 
-var_dump($dadoUm);
-die();
+if($dadoUm == 1){
+    
+}
 
 ?>
