@@ -38,6 +38,8 @@ switch (get_post_action('inativar', 'salvar')) {
         break;
 
     default:
+        echo "Erro ao cadastro duvidas ente em contato com o Administrador"
+        header('Location: ../view/viewAdm.php');
         echo "erro";
 }
 

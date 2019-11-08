@@ -1,9 +1,10 @@
 <?php
     include("../controller/controleAcesso.php");
     include("../controller/conexao.php");
+    include("../controller/criaAlerta.php");
     $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id and f.func_ativo = 1;";
     $result = mysqli_query($conn, $sql);
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,6 +25,7 @@
     <div>
     </div>
     <div>
+    <form action="../view/viewStatusCar.php">
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -35,15 +37,16 @@
       </thead>
       <tbody>
         <?php while($dado = $result -> fetch_array()){?>
-        <tr>
+        <tr class="table-danger">
           <th scope="row"><?php echo $dado['id_func']?></th>
           <td><?php echo $dado['placa']?></td>
           <td><?php echo $dado['nome']?></td>
-          <td><button type="button" class="btn btn-warning">Ver</button></td>
+          <td><button type="submit" class="btn btn-dark">Ver</button></td>
         </tr>
         <?php }?>
       </tbody>
     </table>
+    </form>
     </div>
     </body>
 </html>

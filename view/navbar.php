@@ -21,7 +21,7 @@
             <a class="navbar-brand" href="#"><?php echo $_SESSION['user'];?></a>
         </button>
         <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="../controller/destroySession.php">Sair</a>
+        <a class="nav-item nav-link active" href="../controller/destroySession.php"><button class="btn btn-light" type="button">Sair</button></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
