@@ -1,5 +1,5 @@
 <?php
-$sqlUm = "select sum(q.km) as totalKm from quilometragem q INNER JOIN carro c on q.id_carro = c.id where q.data_inserido >= c.dt_ultima_revisao";
+$sqlUm = "select  (q.km - c.km_utima_revisao) < 10000 as km_limkite from quilometragem q INNER JOIN carro c on q.id_carro = c.id where c.id = 7 order by q.id DESC LIMIT 1";
 $resultUm = mysqli_query($conn, $sqlUm);
 $dadoUm = $resultUm -> fetch_array();
 
