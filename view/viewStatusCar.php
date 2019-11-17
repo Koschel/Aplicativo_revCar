@@ -1,6 +1,7 @@
 <?php
-//select sum(q.km) as totalKm from quilometragem q INNER JOIN carro c on q.id_carro = c.id where q.data_inserido >= c.dt_ultima_revisao
 include("../controller/controleAcesso.php");
+$id_car =  $_POST['id_carro'];
+
 
 ?>
 
@@ -21,16 +22,15 @@ include("../controller/controleAcesso.php");
     
     </head>
     <body>
+    <div>
     <?php include("navbar.php")?>
-
-    <div class="container-fluid" style="margin-top: 21px; margin-left: 5%;">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body border-left-primary shadow h-100 py-2">
-                <h5 class="card-title">Título</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Algo</h6>
-                <p class="card-text">Teste Teste Teste</p>
+    </div>
+    <div class="container card text-white  bg-secondary > mb-3" style="max-width: 18rem;margin-top: 4%;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+            <h5 class="card-title">Dark card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
-</div>
     </body>
 </html>

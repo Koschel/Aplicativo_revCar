@@ -1,9 +1,9 @@
 <?php
     include("../controller/controleAcesso.php");
     include("../controller/conexao.php");
-    include("../controller/criaAlerta.php");
-    $sql = "select f.id as id_func, c.placa as placa, f.nome as nome  from funcionario f inner join carro c on f.id_car = c.id and f.func_ativo = 1;";
+    $sql = "select f.id as id_func, c.placa as placa, f.nome as nome, f.id_car from funcionario f inner join carro c on f.id_car = c.id and f.func_ativo = 1;";
     $result = mysqli_query($conn, $sql);
+    
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,11 +21,11 @@
     
     </head>
     <body>
-    <?php include("navbar.php")?>
     <div>
+    <?php include("navbar.php")?>
     </div>
     <div>
-    <form action="../view/viewStatusCar.php">
+    <form action="../view/viewStatusCar.php" method = 'POST'>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -37,11 +37,12 @@
       </thead>
       <tbody>
         <?php while($dado = $result -> fetch_array()){?>
-        <tr class="table-danger">
+          <?php include("../controller/criaAlerta.php");?>
+        <tr class="table-<?php echo $_SESSION['carStatus']; ?>">
           <th scope="row"><?php echo $dado['id_func']?></th>
           <td><?php echo $dado['placa']?></td>
           <td><?php echo $dado['nome']?></td>
-          <td><button type="submit" class="btn btn-dark">Ver</button></td>
+          <td><button value="<?php echo $dado['id_car']?>" name="id_carro" type="submit" class="btn btn-dark">Ver</button></td>
         </tr>
         <?php }?>
       </tbody>
