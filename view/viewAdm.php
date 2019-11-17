@@ -48,6 +48,14 @@
       </tbody>
     </table>
     </form>
+    <p class="text-center text-danger">
+            <?php
+                if(isset($_SESSION['km_invalido'])){
+                    echo $_SESSION['km_invalido'];
+                    unset ($_SESSION['km_invalido']);
+                }
+            ?>
+    </p>
     </div>
     </body>
 </html>
