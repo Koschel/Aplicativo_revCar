@@ -1,6 +1,6 @@
 <?php 
 include("../controller/controleAcesso.php");
-include("../controller/conexao.php";
+include("../controller/conexao.php");
 
 ?>
 
